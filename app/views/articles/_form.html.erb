@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :content %>
+    <%= form.rich_text_area :content %>
+  </div>
+
+  <div class="field">
     <%= form.label :category_id %>
     <%= collection_select(:article, :category_id, Category.all, :id, :category_name) %>
   </div>
