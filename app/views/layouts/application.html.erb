@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <% if alert %>
+      <p class="alert"> ⚠️ <%= alert %></p>
+    <% end %><br>
     <% if user_signed_in? %>
       Welcome <%= current_user.email %>
       <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
