@@ -13,15 +13,18 @@ class ArticlesController < ApplicationController
   # GET /articles/1 or /articles/1.json
   def show
     @categories = Category.all
+    authorize! :update, @article
   end
 
   # GET /articles/new
   def new
+    authorize! :create, @article
     @article = Article.new
   end
 
   # GET /articles/1/edit
   def edit
+    authorize! :update, @article
   end
 
   # POST /articles or /articles.json
