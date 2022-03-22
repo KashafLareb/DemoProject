@@ -1,0 +1,20 @@
+<%= search_form_for @search do |f| %>
+    <div class="fields">
+      <%= f.condition_fields do |c| %>
+        <%= c.attribute_fields do |a| %>
+          <%= a.attribute_select associations: [:category] %>
+        <% end %>
+        <%= c.predicate_select %>
+        <%= c.value_fields do |v| %>
+          <%= v.text_field :value %>
+        <% end %>
+        <br>
+      <% end %>
+    </div>
+  <br>
+  <div class="actions">
+    <%= f.submit "Search" %>
+  </div>
+<% end %>
+<%= link_to "Refresh all search", articles_path %>
+<hr>

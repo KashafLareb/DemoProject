@@ -3,7 +3,9 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
+    @search = Article.ransack(params[:q])
+    @search.build_condition
+    @articles = @search.result
     @categories = Category.all
   end
 
