@@ -12,7 +12,7 @@
 
 <p>
   <strong>Category Name:</strong>
-  <%= @categories.find(@article.category_id) %>
+  <%= @categories.find(@article.category_id).category_name  %>
 </p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
