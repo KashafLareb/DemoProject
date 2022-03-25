@@ -1,11 +1,5 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ show edit update destroy ]
-
-  def method_name
-    def initialize
-      @errors = ActiveModel::Errors.new(self)
-    end
-  end
   # GET /categories or /categories.json
   def index
     @categories = Category.all
