@@ -1,0 +1,4 @@
+var comments_show = document.querySelector('.comments-list');
+var comments_content = document.querySelector('trix-editor');
+comments_show.innerHTML = ('<%= j render @article.comments %>');
+comments_content.innerHTML = '';
