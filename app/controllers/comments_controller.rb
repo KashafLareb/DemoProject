@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   def create
     @user = current_user
     @article = Article.find(params[:article_id])
-    @comment = @article.comments.create(params[:comment].permit(:body, :article_id))
+    @comment = @article.comments.create(params[:comment].permit(:content, :article_id))
     @comment.user_id = @user.id
     @comment.save
     redirect_to article_path(@article)
