@@ -15,6 +15,10 @@
   <%= @article.content %>
 </p>
 
+<strong><%= @article.comments.count %> Comments <%= link_to "show", article_comments_path(@article) %></strong>
+<div class="comments-list">
+  <%= render @article.comments %>
+</div>
 <%= render 'comments/form' %>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
