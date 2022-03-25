@@ -1,25 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Article category#<%= @article.category_id %>:</strong>
-  <%= @categories.find(@article.category_id).category_name  %>
-</p>
+<h3><%= link_to "Categories", categories_path %> / <%= link_to @categories.find(@article.category_id).category_name, category_path(@article.category_id) %> / <%= link_to "Articles", articles_path %> / <%= @article.title %></h3>
 
 <p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
+  <strong>Article Content:</strong>
   <%= @article.content %>
 </p>
 
-<strong><%= @article.comments.count %> Comments <%= link_to "show", article_comments_path(@article) %></strong>
+<%= link_to 'Edit this Article', edit_article_path(@article) %> |
+<%= link_to 'Back to articles', articles_path %><hr>
+
+<strong><%= @article.comments.count %> Comments <%= link_to "(show table)", article_comments_path(@article) %></strong>
 <div class="comments-list">
   <%= render @article.comments %>
 </div>
+<hr>
 <%= render 'comments/form' %>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
