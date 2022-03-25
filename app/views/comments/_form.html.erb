@@ -1,8 +1,8 @@
 <h2>Add a comment:</h2>
 <%= form_with model: ([ @article, @article.comments.build ]) do |form| %>
   <p>
-    <%= form.label :content %><br>
-    <%= form.text_area :content %>
+    <%= form.label :content, "Comment body:" %><br>
+    <%= form.rich_text_area :content %>
   </p>
   <p>
     <%= form.submit %>
