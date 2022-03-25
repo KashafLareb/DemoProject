@@ -16,10 +16,12 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
+    authorize! :update, @category
   end
 
   # POST /categories or /categories.json
   def create
+    authorize! :create, @category
     @category = Category.new(category_params)
 
     respond_to do |format|
