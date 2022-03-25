@@ -13,7 +13,6 @@ class ArticlesController < ApplicationController
   # GET /articles/1 or /articles/1.json
   def show
     @categories = Category.all
-    authorize! :update, @article
   end
 
   # GET /articles/new
