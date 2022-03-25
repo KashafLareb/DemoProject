@@ -4,7 +4,8 @@
 
 <p>
   <strong>Article Content:</strong>
-  <%= 'Likes' %>
+  <span id="likes-count"><%= @article.likes.count %></span> Likes
+  <%= render 'likes/form', article: @article %>
   <%= @article.content %>
 </p>
 
