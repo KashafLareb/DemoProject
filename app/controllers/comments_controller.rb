@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @comment = @article.comments.create(params[:comment].permit(:content, :article_id))
     @comment.user_id = @user.id
     @comment.save
-    redirect_to article_path(@article)
+    #redirect_to article_path(@article)
   end
 
   def destroy
