@@ -7,11 +7,11 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
+      <th><%= sort_link(@search, :title) %></th>
       <th>Category id</th>
       <th>Category name</th>
-      <th>Created at</th>
-      <th>Updated at</th>
+      <th><%= sort_link(@search, :created_at) %></th>
+      <th><%= sort_link(@search, :updated_at, default_order: :desc) %></th>
       <th>Actions</th>
       <th colspan="3"></th>
     </tr>
