@@ -273,6 +273,7 @@ DEPENDENCIES
   cancancan
   capybara (>= 2.15)
   devise
+  formtastic (~> 4.0)
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
   listen (~> 3.2)

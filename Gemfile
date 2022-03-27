@@ -28,6 +28,8 @@ gem 'devise'
 
 gem 'activeadmin'
 
+gem 'formtastic', '~> 4.0'
+
 gem 'cancancan'
 
 # Use Active Storage variant
