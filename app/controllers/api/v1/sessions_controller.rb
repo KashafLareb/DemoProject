@@ -2,7 +2,7 @@ class Api::V1::SessionsController < Api::V1::ApiController
   def create
     @user = User.authenticate(params[:email], params[:password])
     if @user.present?
-      token = JsonWebToken.encode(@user.id)
+      token = JsonWebToken.encode({id: @user.id})
       render json: { token: token, email: @user.email }, status: :ok
     else
       render json: { error: 'unauthorized' }, status: :unauthorized
