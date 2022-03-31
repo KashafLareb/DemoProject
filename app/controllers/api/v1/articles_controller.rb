@@ -5,15 +5,13 @@ class Api::V1::ArticlesController < Api::V1::ApiController
 
   # GET /articles or /articles.json
   def index
-    @search = Article.ransack(params[:q])
-    @search.build_condition
-    @articles = @search.result
-    @categories = Category.all
+    @articles = Article.all
     render json: @articles, status: :ok
   end
 
   # GET /articles/1 or /articles/1.json
   def show
+    render json: @article, status: :ok
   end
 
   # GET /articles/new
