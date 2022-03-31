@@ -1,6 +1,5 @@
 class Api::V1::ArticlesController < Api::V1::ApiController
   before_action :set_article, only: %i[ show edit update destroy ]
-  #before_action :authenticate_user!
   before_action :authenticate
 
   # GET /articles or /articles.json
@@ -27,29 +26,22 @@ class Api::V1::ArticlesController < Api::V1::ApiController
 
   # POST /articles or /articles.json
   def create
+    authorize! :create, @article
     @article = Article.new(article_params)
-
-    respond_to do |format|
       if @article.save
-        format.html { redirect_to article_url(@article), notice: "Article was successfully created." }
-        format.json { render :show, status: :created, location: @article }
+        render json: @article, status: :created
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+        render json: @article.errors, status: :unprocessable_entity 
       end
-    end
   end
 
   # PATCH/PUT /articles/1 or /articles/1.json
   def update
-    respond_to do |format|
-      if @article.update(article_params)
-        format.html { redirect_to article_url(@article), notice: "Article was successfully updated." }
-        format.json { render :show, status: :ok, location: @article }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
-      end
+    authorize! :update, @article
+    if @article.update(article_params)
+      render json: @article, status: :ok
+    else
+      render json: @article.errors, status: :unprocessable_entity 
     end
   end
 
