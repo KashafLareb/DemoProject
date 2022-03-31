@@ -11,6 +11,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
+    authorize! :create, @category
     @category = Category.new
   end
 
