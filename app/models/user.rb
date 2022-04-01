@@ -11,4 +11,5 @@ class User < ApplicationRecord
     return nil unless user.present?
     user.valid_password?(password) ? user : nil
   end
+  
 end

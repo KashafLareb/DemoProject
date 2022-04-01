@@ -8,7 +8,9 @@ class Category < ApplicationRecord
                   presence: true, 
                   uniqueness: true, 
                   length: { in: 6..80 }
+
   def to_s
     self.category_name
   end
+  
 end
