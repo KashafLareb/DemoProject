@@ -1,4 +1,5 @@
 class Api::V1::SessionsController < Api::V1::ApiController
+  
   def create
     @user = User.authenticate(params[:email], params[:password])
     if @user.present?
@@ -7,10 +8,6 @@ class Api::V1::SessionsController < Api::V1::ApiController
     else
       render json: { error: 'unauthorized' }, status: :unauthorized
     end
-  end
-
-  def index
-    @users = User.all
   end
 
   private

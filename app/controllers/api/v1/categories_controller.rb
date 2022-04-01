@@ -1,5 +1,6 @@
 class Api::V1::CategoriesController < Api::V1::ApiController
   before_action :set_category, only: %i[ show edit update destroy ]
+  before_action :authenticate
   # GET /categories or /categories.json
   def index
     @categories = Category.all
@@ -13,6 +14,7 @@ class Api::V1::CategoriesController < Api::V1::ApiController
 
   # GET /categories/new
   def new
+    authorize! :create, @category
     @category = Category.new
   end
 
@@ -23,30 +25,22 @@ class Api::V1::CategoriesController < Api::V1::ApiController
 
   # POST /categories or /categories.json
   def create
-    authorize! :create, @category
     @category = Category.new(category_params)
-
-    respond_to do |format|
-      if @category.save
-        format.html { redirect_to category_url(@category), notice: "Category was successfully created." }
-        format.json { render :show, status: :created, location: @category }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
+    authorize! :create, @category
+    if @category.save
+      render json: @category, status: :created
+    else
+      render json: @category.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /categories/1 or /categories/1.json
   def update
-    respond_to do |format|
-      if @category.update(category_params)
-        format.html { redirect_to category_url(@category), notice: "Category was successfully updated." }
-        format.json { render :show, status: :ok, location: @category }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
+    authorize! :update, @category
+    if @category.update(category_params)
+        render json: @category, status: :ok 
+    else
+      render json: @category.errors, status: :unprocessable_entity 
     end
   end
 
