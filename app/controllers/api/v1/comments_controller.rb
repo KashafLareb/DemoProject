@@ -3,7 +3,7 @@ class Api::V1::CommentsController < Api::V1::ApiController
   def index
     @article = Article.find(params[:article_id])
     @comments = @article.comments
-    render json: @comments, status: :ok
+    render json: CommentSerializer.new(@comments).serializable_hash.to_json, status: :ok
   end
   def create
     @user = current_user
