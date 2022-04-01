@@ -3,7 +3,7 @@ class Api::V1::CommentsController < Api::V1::ApiController
   def index
     @article = Article.find(params[:article_id])
     @comments = @article.comments
-    render json: CommentSerializer.new(@comments).serializable_hash.to_json, status: :ok
+    render json: CommentSerializer.new(@comments), status: :ok
   end
   def create
     @user = current_user
@@ -19,6 +19,7 @@ class Api::V1::CommentsController < Api::V1::ApiController
   def destroy
     @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
+    authorize! :destroy, @comment
     @comment.destroy
     render json: "Destroyed comment: #{@comment.id} on the article: #{@article.title}", status: :ok
   end

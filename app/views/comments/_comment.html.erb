@@ -1,5 +1,8 @@
 <p>
-  <strong>Comment#<%= comment.id %>: <%= link_to 'Delete', [comment.article, comment], :confirm => 'Are you sure?', :method => :delete %></strong>
+  <strong>Comment#<%= comment.id %>: 
+  <% if can? :destroy, comment %>
+    <%= link_to 'Delete', [comment.article, comment], :confirm => 'Are you sure?', :method => :delete %>
+  <% end %></strong>
   <%= comment.content %><br>
   by:  <%= User.find(comment.user_id).email %>
 </p>
