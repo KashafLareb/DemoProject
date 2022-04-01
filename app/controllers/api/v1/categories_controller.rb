@@ -25,8 +25,8 @@ class Api::V1::CategoriesController < Api::V1::ApiController
 
   # POST /categories or /categories.json
   def create
-    authorize! :create, @category
     @category = Category.new(category_params)
+    authorize! :create, @category
     if @category.save
       render json: @category, status: :created
     else
