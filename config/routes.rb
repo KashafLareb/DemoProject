@@ -13,8 +13,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :categories
-      resources :articles
-      resources :sessions, only: [:create, :index]
+      resources :articles do
+        resources :comments, only: [:create, :destroy, :index]
+      end
+      resources :sessions, only: [:create]
       resources :registrations, only: [:create, :index]
     end
   end
