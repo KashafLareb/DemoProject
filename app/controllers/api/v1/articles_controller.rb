@@ -5,13 +5,12 @@ class Api::V1::ArticlesController < Api::V1::ApiController
   # GET /articles or /articles.json
   def index
     @articles = Article.all
-    render json: @articles, status: :ok
+    render json: ArticleSerializer.new(@articles), status: :ok
   end
 
   # GET /articles/1 or /articles/1.json
   def show
-    render json: ArticleSerializer.new(@article).serializable_hash.to_json, status: :ok
-    #render json: @article, methods: [:total_likes, :liking_users, :total_comments, :all_comments]
+    render json: @article, methods: [:total_likes, :liking_users, :total_comments, :all_comments]
   end
 
   # GET /articles/new
