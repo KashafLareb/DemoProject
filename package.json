@@ -1,6 +1,11 @@
 {
   "name": "demo_project",
   "private": true,
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x",
+    "yarn": "1.x"
+  },
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
     "@rails/actiontext": "^6.0.4-7",
@@ -10,13 +15,7 @@
     "trix": "^1.2.0",
     "turbolinks": "^5.2.0"
   },
-  
   "version": "0.1.0",
-  "engines": {
-    "node": "14.x",
-    "npm": "6.x",
-    "yarn": "1.x"
-  },
   "devDependencies": {
     "webpack-dev-server": "^4.7.4"
   }
