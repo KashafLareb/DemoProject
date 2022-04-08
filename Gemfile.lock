@@ -95,6 +95,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    discard (1.2.1)
+      activerecord (>= 4.2, < 8)
     erubi (1.10.0)
     ffi (1.15.5)
     formtastic (4.0.0)
@@ -278,6 +280,7 @@ DEPENDENCIES
   cancancan
   capybara (>= 2.15)
   devise
+  discard (~> 1.2)
   formtastic (~> 4.0)
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
