@@ -28,6 +28,19 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
 
+  ## Gmail settings
+  # config.action_mailer.default_url_options = { host: 'herokuapp.com' }
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address:              'smtp.gmail.com',
+  #   port:                 25,
+  #   domain:               'gmail.com',
+  #   user_name:            'quiet.island.81181@gmail.com',
+  #   password:             'owhcfipvquynvphl',
+  #   authentication:       'plain',
+  #   enable_starttls_auto: true
+  # }
+
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
 
@@ -60,13 +73,6 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "Demo_2_production"
 
-  # Mailcatcher settings
-  config.action_mailer.default_url_options = {
-    host: 'localhost:3000'
-  }
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { :address => '127.0.0.1', :port => 1025 }
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
