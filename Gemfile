@@ -26,6 +26,9 @@ gem 'jsonapi-serializer'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Use discard for soft delete
+gem 'discard', '~> 1.2'
+
 gem 'ransack'
 
 gem 'devise'

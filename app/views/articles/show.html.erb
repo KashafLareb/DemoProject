@@ -14,9 +14,9 @@
 <% end %>
 <%= link_to 'Back to articles', articles_path %><hr>
 
-<strong><%= @article.comments.count %> Comments <%= link_to "(show table)", article_comments_path(@article) %></strong>
+<strong><%= @article.comments.kept.count %> Comments <%= link_to "(show table)", article_comments_path(@article) %></strong>
 <div class="comments-list">
-  <%= render @article.comments %>
+  <%= render @article.comments.kept %>
 </div>
 <hr>
 <%= render 'comments/form' %>
