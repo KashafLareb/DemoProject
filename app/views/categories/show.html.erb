@@ -1,16 +1,8 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Category name:</strong>
-  <%= @category.category_name %>
+  <h3><%= @category.category_name %></h3>
+  <em><%= @category.description %></em>
 </p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @category.description %>
-</p>
-
 <% if can? :update, @category %>
-  <%= link_to 'Edit', edit_category_path(@category) %> | 
+  <%= link_to 'Edit', edit_category_path(@category) %>
 <% end %>
 <%= link_to 'Back', categories_path %>
