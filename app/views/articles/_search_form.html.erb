@@ -1,20 +1,27 @@
-<%= search_form_for @search do |f| %>
-    <div class="fields">
+<h4>Search articles</h4><hr>
+<div class="container">
+  <%= search_form_for @search do |f| %>
+    <div class="fields"> 
       <%= f.condition_fields do |c| %>
+      <br>
+      Choose attribute:
         <%= c.attribute_fields do |a| %>
-          <%= a.attribute_select associations: [:category] %>
+          <%= a.attribute_select %>
         <% end %>
+        Select predicate: 
         <%= c.predicate_select %>
+        <br>
         <%= c.value_fields do |v| %>
           <%= v.text_field :value %>
         <% end %>
-        <br>
       <% end %>
+      <%= f.submit "Search" %>
     </div>
+  <% end %>
   <br>
-  <div class="actions">
-    <%= f.submit "Search" %>
-  </div>
-<% end %>
-<%= link_to "Refresh all search", articles_path %>
+</div> 
 <hr>
+<%= link_to "Refresh all search", articles_path %>
+<br>
+<em>Showing <%= @articles.count %> article(s) out of <%= Article.all.count %></em>
+
