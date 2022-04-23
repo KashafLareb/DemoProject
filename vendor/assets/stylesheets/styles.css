@@ -7515,6 +7515,10 @@ textarea.form-control-lg {
   --bs-text-opacity: 1;
 }
 
+.bg-lighter{
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 .bg-primary {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
@@ -11116,9 +11120,7 @@ footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
-.bg-silver{
-  background-color:rgb(243, 240, 240);
-}
+
 header.masthead {
   position: relative;
   margin-bottom: 3rem;
@@ -11126,7 +11128,7 @@ header.masthead {
   padding-bottom: 8rem;
   background: no-repeat center center;
   background-size: cover;
-  background-image: url('bg.jpg');
+  background-image: url('books-bg.jpg');
   background-attachment: scroll;
 }
 header.masthead:before {
