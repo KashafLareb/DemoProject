@@ -22,22 +22,15 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Page Header-->
-      <header class="masthead">
-          <div class="position-relative px-4 px-lg-5">
-              <div class="row gx-4 gx-lg-5 justify-content-center bg-lighter">
-                <%= render 'layouts/messages' %>
-                <%= yield %>
-              </div>
-          </div>
-      </header>
-      <div class="text-center bg-warning bg-gradient text-secondary">
-        Currently logged in: 
-        <% if user_signed_in? %>
-          <strong><em><%= current_user.email %></em> ✅</strong>
-        <% else %>
-          no user signed in right now! ⛔
-        <% end %>
-      </div>
-      <hr>
+    <header class="masthead">
+        <div class="position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center bg-lighter">
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+            </div>
+        </div>
+    </header>
+    <%= render 'layouts/current_user' %>
+
   </body>
 </html>
