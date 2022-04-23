@@ -32,6 +32,7 @@ gem 'discard', '~> 1.2'
 gem 'ransack'
 
 gem 'devise'
+gem 'devise-bootstrap-views', '~> 1.0'
 
 gem 'activeadmin'
 
