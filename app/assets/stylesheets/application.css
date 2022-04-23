@@ -14,9 +14,3 @@
  *= require styles.css
  *= require_self
  */
-
- .alert {
-   color:firebrick;
-   text-align: center;
-   font-size: large;
- }
