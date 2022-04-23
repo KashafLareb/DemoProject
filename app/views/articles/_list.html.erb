@@ -1,0 +1,34 @@
+<div class="subheading">
+  <table class="table table-hover bg-gradient articles-table">
+    <thead>
+      <tr>
+        <th><%= sort_link(@search, :title) %></th>
+        <th>Category id</th>
+        <th>Category name</th>
+        <th><%= sort_link(@search, :created_at) %></th>
+        <th><%= sort_link(@search, :updated_at, default_order: :desc) %></th>
+        <th>Actions</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @articles.each do |article| %>
+        <tr>
+          <td><%= article.title %></td>
+          <td><%= article.category_id %></td>
+          <td> (<%= @categories.find(article.category_id).category_name %>)</td>
+          <td><%= time_ago_in_words(article.created_at) %></td>
+          <td><%= time_ago_in_words(article.updated_at) %></td>
+          <td><%= link_to 'Show', article %></td>
+          <% if can? :update, article %>
+            <td><%= link_to 'Edit', edit_article_path(article) %></td>
+          <% end %>
+          <% if can? :destroy, article %>
+            <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

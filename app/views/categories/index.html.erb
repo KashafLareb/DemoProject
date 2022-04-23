@@ -1,35 +1,9 @@
 <div class="categories-header p-5">
   <h1>Categories</h1>
-  <div class="subheading">
-    <table>
-      <thead>
-        <tr>
-          <th>Category name</th>
-          <th>Description</th>
-          <th>Actions</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @categories.each do |category| %>
-          <tr>
-            <td><%= category.category_name %></td>
-            <td><%= category.description %></td>
-            <td><%= link_to 'Show', category %></td>
-            <% if can? :update, category %>
-              <td><%= link_to 'Edit', edit_category_path(category) %></td>
-            <% end %>
-            <% if can? :destroy, category %>
-              <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            <% end %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+  <%= render 'categories/list' %>
+  <br>
+  <% if can? :create, @category %>
+    <%= link_to 'Create New Category', new_category_path, class: "btn btn-dark" %>
+  <% end %>
 </div>
-<br>
-<% if can? :create, @category %>
-  <%= link_to 'New Category', new_category_path %>
-<% end %>
+

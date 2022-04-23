@@ -1,32 +1,7 @@
 <div class="comments-header p-5">
   <h3>Comments on <%= link_to @article.title, article_path(@article) %></h3>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Comment Id</th>
-        <th>Comments</th>
-        <th>By</th>
-        <th>Created at</th>
-        <th>Actions</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @comments.each do |comment| %>
-        <tr>
-          <td><%= comment.id %></td>
-          <td><%= comment.content %></td>
-          <td><%= User.find(comment.user_id).email %></td>
-          <td><%= time_ago_in_words(comment.created_at) %></td>
-          <% if can? :destroy, comment %>
-            <td><%= link_to 'Delete', [comment.article, comment], :confirm => 'Are you sure?', :method => :delete %></td>
-          <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <%= render 'comments/list' %>
+  
   <hr>
   <%= render 'discarded' %>
 </div>

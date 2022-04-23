@@ -2,5 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .articles-header{
-  background-color: rgb(251, 221, 103);
+  background-color: rgba(129, 154, 187, 0.626) !important;
+}
+.article-header{
+  background-color: rgba(217, 246, 239, 0.391) !important;
+}
+.articles-table{
+  background-color: rgb(129, 154, 187) !important;
 }
