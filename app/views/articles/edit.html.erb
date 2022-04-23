@@ -1,9 +1,7 @@
 <div class="p-5">
   <h2>Editing Article</h2>
-  <hr>
   <%= render 'form', article: @article %>
-
   <hr>
-  <%= link_to 'Show', @article %> | 
-  <%= link_to 'Back', articles_path %>
+  <%= link_to 'Show', @article, class: "btn btn-dark" %> | 
+  <%= link_to 'Back', articles_path, class: "btn btn-dark" %>
 </div>
