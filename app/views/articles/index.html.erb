@@ -1,11 +1,11 @@
-<div class="articles-header bg-gradient px-5 pb-5 pt-3">
+<div class="bg-gradient articles-header px-5 pb-5 pt-3 col-10">
   <h1>Articles</h1>
   <hr>
   <%= render 'search_form' %>
   <%= render 'articles/list' %>
   <br>
   <% if can? :create, @articles %>
-    <%= link_to 'Create New Article', new_article_path, class: "btn btn-dark" %>
+    <%= link_to 'Create New Article →', new_article_path, class: "btn btn-dark" %>
   <% end %>
 </div>
 

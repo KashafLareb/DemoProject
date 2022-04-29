@@ -1,5 +1,4 @@
 <h4>Search articles</h4><hr>
-<div class="container ">
   <%= search_form_for @search do |f| %>
     <div class="fields"> 
       <% f.condition_fields do |c| %>
@@ -13,16 +12,15 @@
         <br>
       <% end %>
       <%= f.label :title_cont, "Title: " %>
-      <div class="input-group" style="width: 700px"> 
+      <div class="input-group"> 
         <%= f.search_field :title_cont, class: "form-control", placeholder: "type article title here" %>
-        <%= f.submit "Search", class: "btn btn-sm btn-dark" %>
+        <%= f.submit "🔍 Search", class: "btn btn-sm btn-outline-success" %>
       </div>
     </div>
   <% end %>
   <br>
-</div> 
 <hr>
-<%= link_to "Refresh all search", articles_path %>
+<%= link_to "Refresh all search", articles_path, class:"btn btn-primary" %>
 <br>
 <em>Showing <%= @articles.count %> article(s) out of <%= Article.all.count %></em>
 

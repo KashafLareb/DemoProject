@@ -241,7 +241,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #0085A1;
+  color: white !important;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -2999,7 +2999,7 @@ textarea.form-control-lg {
 }
 
 .btn-primary {
-  color: #fff;
+  color: #fff !important;
   background-color: #0085A1;
   border-color: #0085A1;
 }
@@ -3059,7 +3059,7 @@ textarea.form-control-lg {
 }
 
 .btn-success {
-  color: #fff;
+  color: #fff !important;
   background-color: #198754;
   border-color: #198754;
 }
@@ -3149,7 +3149,7 @@ textarea.form-control-lg {
 }
 
 .btn-danger {
-  color: #fff;
+  color: #fff !important;
   background-color: #dc3545;
   border-color: #dc3545;
 }
@@ -3209,12 +3209,12 @@ textarea.form-control-lg {
 }
 
 .btn-dark {
-  color: #fff;
+  color: rgb(215, 214, 214) !important;
   background-color: #212529;
   border-color: #212529;
 }
 .btn-dark:hover {
-  color: #fff;
+  color: #fff !important;
   background-color: #1c1f23;
   border-color: #1a1e21;
 }
@@ -7517,10 +7517,6 @@ textarea.form-control-lg {
   --bs-text-opacity: 1;
 }
 
-.bg-lighter{
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
 .bg-primary {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
@@ -11130,7 +11126,6 @@ header.masthead {
   padding-bottom: 8rem;
   background: no-repeat center center;
   background-size: cover;
-  background-image: url('books-bg.jpg');
   background-attachment: scroll;
 }
 header.masthead:before {

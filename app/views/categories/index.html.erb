@@ -1,9 +1,9 @@
-<div class="categories-header px-5 pb-5 pt-3">
+<div class="categories-header px-5 pb-5 pt-3 col-10">
   <h1>Categories</h1>
   <%= render 'categories/list' %>
   <br>
   <% if can? :create, @category %>
-    <%= link_to 'Create New Category', new_category_path, class: "btn btn-dark" %>
+    <%= link_to 'Create New Category →', new_category_path, class: "btn btn-dark" %>
   <% end %>
 </div>
 

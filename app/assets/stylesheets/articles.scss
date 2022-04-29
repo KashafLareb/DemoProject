@@ -2,11 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .articles-header{
-  background-color: rgba(129, 154, 187, 0.626) !important;
+  background-color: rgba(198, 207, 218, 0.626) !important;
 }
 .article-header{
-  background-color: rgba(217, 246, 239, 0.391) !important;
+  background-color: rgba(198, 207, 218, 0.626) !important;
 }
 .articles-table{
   background-color: rgb(129, 154, 187) !important;
+}
+.article-body{
+  background-color: white;
+  padding-block: 3%;
+  padding-inline: 8%;
+  text-align: justify;
 }
