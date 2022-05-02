@@ -1,0 +1,25 @@
+<!-- Article preview-->
+<% @articles.each do |article| %>
+  <div class="post-preview text-center articles-header my-2 py-2 rounded-pill">
+    <a href="/articles/<%= article.id %>">
+      <h2 class="post-title mb-5"><%= article.title %></h2>
+    </a>
+    <span class="post-subtitle">Comments on the article: <%= article.comments.count %></span><br>
+    <span class="post-subtitle">Likes on the article: <%= article.likes.count %></span>
+    <br><br>
+    <%= link_to 'Show', (article), class: "btn btn-success" %>
+    <% if can? :update, article %>
+      <%= link_to 'Edit', edit_article_path(article), class: "btn btn-primary" %>
+    <% end %>
+    <% if can? :destroy, article %>
+      <%= link_to 'Destroy', article, class: "btn btn-danger",  method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    <!-- Divider-->
+    <hr class="my-4" />
+    <p class="post-meta">
+        Posted on: <%= (article.created_at).strftime("%A, %B %d, %Y") %><br>
+        Last updated: <%= (article.updated_at).strftime("%A, %B %d, %Y") %>
+    </p>
+  </div>
+<% end %>
+

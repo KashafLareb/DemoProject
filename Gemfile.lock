@@ -95,6 +95,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-bootstrap-views (1.1.0)
     discard (1.2.1)
       activerecord (>= 4.2, < 8)
     erubi (1.10.0)
@@ -280,6 +281,7 @@ DEPENDENCIES
   cancancan
   capybara (>= 2.15)
   devise
+  devise-bootstrap-views (~> 1.0)
   discard (~> 1.2)
   formtastic (~> 4.0)
   image_processing (~> 1.2)

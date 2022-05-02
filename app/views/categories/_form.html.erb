@@ -1,3 +1,4 @@
+<hr>
 <%= form_with(model: category, local: true) do |form| %>
   <% if category.errors.any? %>
     <div id="error_explanation">
@@ -20,8 +21,10 @@
     <%= form.label :description %>
     <%= form.text_area :description %>
   </div>
+  <hr>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Save Category" , class: "btn btn-outline-success" %>
   </div>
 <% end %>
+

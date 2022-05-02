@@ -1,6 +1,10 @@
 class LikesController < ApplicationController
+  
   def create
-    if already_liked?
+    if current_user == nil
+      flash[:alert] = "You need to sign in for liking an article!"
+      redirect_to article_path(params[:article_id])
+    elsif already_liked?
       @like = Like.where(user_id: current_user.id, article_id: @article.id)
       @like.destroy_all
     else
@@ -9,6 +13,7 @@ class LikesController < ApplicationController
       @like.article_id=@article.id
       @like.user_id=current_user.id
       @like.save
+      
     end
   end
   def already_liked?

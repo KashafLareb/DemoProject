@@ -11,11 +11,6 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require styles.css
  *= require_self
  */
-
- .alert {
-   color:firebrick;
-   text-align: center;
-   font-size: large;
- }

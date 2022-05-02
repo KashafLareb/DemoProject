@@ -1,3 +1,16 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.comments-header{
+  background-color: rgba(203, 218, 177, 0.687);
+}
+.comments-table{
+  background-color: rgba(203, 218, 177, 0.919);
+}
+.single-comment{
+  background-color: rgba(198, 207, 218, 0.626);
+  padding: 3rem;
+}
+.comments-list{
+  background-color: rgba(198, 207, 218, 0.626);
+}

@@ -1,6 +1,7 @@
-<h1>Editing Category</h1>
-
-<%= render 'form', category: @category %>
-
-<%= link_to 'Show', @category %> |
-<%= link_to 'Back', categories_path %>
+<div class="p-5 categories-header">
+  <h2>Editing Category</h2>
+  <%= render 'form', category: @category %>
+  <hr>
+  <%= link_to 'Show', @category, class: "btn btn-dark" %> | 
+  <%= link_to 'Back', categories_path, class: "btn btn-dark" %>
+</div>

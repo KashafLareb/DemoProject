@@ -1,16 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Category name:</strong>
-  <%= @category.category_name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @category.description %>
-</p>
-
-<% if can? :update, @category %>
-  <%= link_to 'Edit', edit_category_path(@category) %> | 
-<% end %>
-<%= link_to 'Back', categories_path %>
+<div class="post-preview text-center categories-header m-2 col-9">
+  <h2 class="post-title mb-5"><%= @category.category_name %></h2>
+  <span class="post-subtitle"><%= @category.description %></span>
+  <br><br>
+  <br><br>
+  <%= link_to 'Back', categories_path, class: "btn btn-dark" %>
+  <% if can? :update, @category %>
+    <%= link_to 'Edit', edit_category_path(@category), class: "btn btn-primary" %>
+  <% end %>
+  <% if can? :destroy, @category %>
+    <%= link_to 'Destroy', @category, class: "btn btn-danger",  method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+  <!-- Divider-->
+  <hr class="my-4" />
+  <p class="post-meta">
+      Posted on: <%= (@category.created_at).strftime("%A, %B %d, %Y") %><br>
+      Last updated: <%= (@category.updated_at).strftime("%A, %B %d, %Y") %>
+  </p>
+</div>

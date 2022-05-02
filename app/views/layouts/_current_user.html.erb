@@ -1,0 +1,9 @@
+<div class="text-center bg-primary bg-gradient text-light">
+  Currently logged in: 
+  <% if user_signed_in? %>
+    <strong><em><%= current_user.email %></em> ✔️</strong>
+  <% else %>
+    no user signed in right now! ⛔
+  <% end %>
+</div>
+<hr>

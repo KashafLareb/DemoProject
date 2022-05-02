@@ -1,3 +1,3 @@
 <%= form_with(model: @article, url:article_likes_path(@article), method: :post) do |form| %>
-  <%= form.submit "Like  " %>
+  <%= form.submit "Like", class: "btn btn-success" %>
 <% end %>

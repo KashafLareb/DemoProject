@@ -6,22 +6,31 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'scripts', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <% if alert %>
-      <p class="alert"> ⚠️ <%= alert %></p>
-    <% end %><br>
-    <% if user_signed_in? %>
-      Welcome <%= current_user.email %>,
-      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-    <% else %>
-      <%= link_to "Log in", new_user_session_path %> | 
-      <%= link_to "Sign up", new_user_registration_path %>
-    <% end %>
-    <%= yield %>
-    <hr><%= link_to "Categories", categories_path %> | <%= link_to "Articles", articles_path %>
+    <%= render 'layouts/navigation' %>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Page Header-->
+    <header class="masthead">
+        <div class="position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+            </div>
+        </div>
+    </header>
+    <%= render 'layouts/current_user' %>
+
   </body>
 </html>
