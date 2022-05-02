@@ -7,7 +7,7 @@ class Category < ApplicationRecord
   validates :description, 
                   presence: true, 
                   uniqueness: true, 
-                  length: { in: 6..80 }
+                  length: { in: 6..200 }
 
   def to_s
     self.category_name
