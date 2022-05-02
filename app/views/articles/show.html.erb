@@ -1,6 +1,6 @@
 <div class="article-header p-5 col-10">
-  <h3><%= link_to "Categories", categories_path %> / <%= link_to @categories.find(@article.category_id).category_name, category_path(@article.category_id) %> / <%= link_to "Articles", articles_path %> / <%= @article.title %></h3>
-
+  <h5><%= link_to "Categories", categories_path %> / <%= link_to @categories.find(@article.category_id).category_name, category_path(@article.category_id) %> / <%= link_to "Articles", articles_path %> / <%= @article.title %></h5>
+  <h2><%= @article.title %></h2>
   <p>
     <h5><span id="likes-count"><%= @article.likes.count %></span> Likes</h5>
     <%= render 'likes/form', article: @article %>
@@ -21,5 +21,7 @@
     <%= render @article.comments.kept %>
   </div>
   <hr>
-  <%= render 'comments/form' %>
+  <% if can? :create, @article %>
+    <%= render 'comments/form' %>
+  <% end %>
 </div>
